@@ -15,4 +15,9 @@ public class Constants {
     public static final String HTTP_METHOD_DELETE = "DELETE";
 
     public static final String ENCODING_UTF8 = "UTF-8";
+
+    public static final String RESPONSE_FORMAT_XML = "XML";
+    public static final String RESPONSE_FORMAT_JSON = "JSON";
+
+
 }

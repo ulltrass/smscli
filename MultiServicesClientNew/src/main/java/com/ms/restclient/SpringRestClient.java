@@ -1,10 +1,8 @@
 package com.ms.restclient;
 
 import com.ms.util.Constants;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.*;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter;
@@ -29,7 +27,11 @@ import java.util.Map;
  */
 @Service
 public class SpringRestClient implements RestClient {
-    private static RestTemplate restTemplate;
+
+    private RestTemplate restTemplate;
+
+    @Value("${nexmo.response.format}")
+    private String responseFormat;
 
     public SpringRestClient() {
 //        HttpComponentsClientHttpRequestFactory reqFactory = new HttpComponentsClientHttpRequestFactory();
@@ -67,34 +69,28 @@ public class SpringRestClient implements RestClient {
             // get Spring HttpHeaders
             HttpHeaders httpHeaders = getHttpHeaders(httpHeaderAttributeMap, restClientRequestInfo.getRequestMediaType());
 
+            // get message converters - this can be either XML or JSON
+            List<HttpMessageConverter<?>> messageConverters = getMessageConverters();
 
+            restTemplate.setMessageConverters(messageConverters);
 
-            List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
-
-//            //Add the Jackson Message converter
-//            messageConverters.add(new MappingJacksonHttpMessageConverter());
-//
-//            //Add the message converters to the restTemplate
-//            restTemplate.setMessageConverters(messageConverters);
-
-
-//            Jaxb2RootElementHttpMessageConverter jaxbMessageConverter = new Jaxb2RootElementHttpMessageConverter();
-//            List<MediaType> mediaTypes = new ArrayList<MediaType>();
-//            mediaTypes.add(MediaType.TEXT_HTML);
-//            jaxbMessageConverter.setSupportedMediaTypes(mediaTypes);
-//            messageConverters.add(jaxbMessageConverter);
-//
-//            restTemplate.setMessageConverters(messageConverters);
+            // get Spring HttpMethod
+            HttpMethod springHttpMethod = getSpringHttpMethod(method);
 
             // get Spring HttpEntity for request
             HttpEntity requestHttpEntity = getRequestHttpEntity(method, requestParameterMap, httpHeaders);
 
-            Object response = null;
-            if (Constants.HTTP_METHOD_GET.equals(method)) {
-                response = restTemplate.getForObject(endpointUrlAndParams, responseObjectClass, uriVariables);
-            } else if (Constants.HTTP_METHOD_POST.equals(method)) {
-                restTemplate.postForObject(endpointUrlAndParams, requestHttpEntity, responseObjectClass, uriVariables);
+            ResponseEntity responseEntity = restTemplate.exchange(endpointUrlAndParams, springHttpMethod, requestHttpEntity,
+                    responseObjectClass, uriVariables);
+
+            HttpStatus httpStatus = responseEntity.getStatusCode();
+
+            // throw RestResponseException if status code is not OK (200)
+            if (!HttpStatus.OK.equals(httpStatus)) {
+                throw new RestResponseException(responseEntity.getBody().toString(), httpStatus.value());
             }
+
+            Object response = responseEntity.getBody();
 
             return responseObjectClass.cast(response);
 
@@ -103,6 +99,23 @@ public class SpringRestClient implements RestClient {
         } catch (Exception e) {
             throw new RestInternalException("Exception of type " + e.getClass().getName() + " occured, see stack trace ", e);
         }
+    }
+
+    private List<HttpMessageConverter<?>> getMessageConverters() {
+        List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+
+        if (Constants.RESPONSE_FORMAT_JSON.equals(responseFormat)) {
+            //Add the Jackson Message converter
+            messageConverters.add(new MappingJacksonHttpMessageConverter());
+        } else {
+            Jaxb2RootElementHttpMessageConverter jaxbMessageConverter = new Jaxb2RootElementHttpMessageConverter();
+            List<MediaType> mediaTypes = new ArrayList<MediaType>();
+            mediaTypes.add(MediaType.APPLICATION_XML);
+            jaxbMessageConverter.setSupportedMediaTypes(mediaTypes);
+            messageConverters.add(jaxbMessageConverter);
+        }
+
+        return messageConverters;
     }
 
     private HttpMethod getSpringHttpMethod(String method) {
