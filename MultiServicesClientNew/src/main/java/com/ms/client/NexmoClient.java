@@ -35,6 +35,7 @@ public class NexmoClient implements MsClient {
         restClientRequestInfo.setEndpointUrl(NEXMO_URL + "/account/get-balance/{api_key}/{api_secret}");
         restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_GET);
 
+
         AccountBalance accountBalance = restClient.sendRequest(restClientRequestInfo, null, AccountBalance.class, vars);
 
         return accountBalance;
