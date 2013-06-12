@@ -5,6 +5,9 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -13,6 +16,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -61,6 +66,25 @@ public class SpringRestClient implements RestClient {
 
             // get Spring HttpHeaders
             HttpHeaders httpHeaders = getHttpHeaders(httpHeaderAttributeMap, restClientRequestInfo.getRequestMediaType());
+
+
+
+            List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+
+//            //Add the Jackson Message converter
+//            messageConverters.add(new MappingJacksonHttpMessageConverter());
+//
+//            //Add the message converters to the restTemplate
+//            restTemplate.setMessageConverters(messageConverters);
+
+
+//            Jaxb2RootElementHttpMessageConverter jaxbMessageConverter = new Jaxb2RootElementHttpMessageConverter();
+//            List<MediaType> mediaTypes = new ArrayList<MediaType>();
+//            mediaTypes.add(MediaType.TEXT_HTML);
+//            jaxbMessageConverter.setSupportedMediaTypes(mediaTypes);
+//            messageConverters.add(jaxbMessageConverter);
+//
+//            restTemplate.setMessageConverters(messageConverters);
 
             // get Spring HttpEntity for request
             HttpEntity requestHttpEntity = getRequestHttpEntity(method, requestParameterMap, httpHeaders);
