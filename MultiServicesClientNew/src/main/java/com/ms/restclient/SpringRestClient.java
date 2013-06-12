@@ -65,7 +65,6 @@ public class SpringRestClient implements RestClient {
             // get Spring HttpEntity for request
             HttpEntity requestHttpEntity = getRequestHttpEntity(method, requestParameterMap, httpHeaders);
 
-
             Object response = null;
             if (Constants.HTTP_METHOD_GET.equals(method)) {
                 response = restTemplate.getForObject(endpointUrlAndParams, responseObjectClass, uriVariables);

@@ -17,10 +17,10 @@ public class MsClientFactory {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
         MsClient msClient = null;
 
-        if (name.equals("")) {
+        if (name.equals("nexmo")) {
             msClient = context.getBean(NexmoClient.class);
-        } else if (name.equals("")) {
-            //todo: get another bean
+        } else if (name.equals("not implemented")) {
+
         } else {
             throw new MsException();
         }

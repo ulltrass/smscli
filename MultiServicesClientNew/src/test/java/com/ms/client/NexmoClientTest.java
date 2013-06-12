@@ -1,6 +1,8 @@
 package com.ms.client;
 
-import com.ms.beans.nexmo.AccountBalance;
+import com.ms.beans.nexmo.xml.AccountBalance;
+import com.ms.beans.nexmo.xml.AccountPricing;
+import com.ms.exception.MsException;
 import com.ms.restclient.RestInternalException;
 import com.ms.restclient.RestResponseException;
 import org.junit.Test;
@@ -24,12 +26,31 @@ public class NexmoClientTest {
 
     @Autowired
     private NexmoClient nexmoClient;
+    private MsClientFactory msClientFactory = new MsClientFactory();
 
     @Test
     public void testGetAccountBalance() throws RestInternalException, RestResponseException {
 
         AccountBalance accountBalance = nexmoClient.getAccountBalance();
         assertNotNull(accountBalance);
+    }
+
+    @Test
+    public void testGetAccountBalanceFromFactory() throws RestInternalException, RestResponseException, MsException {
+        MsClient msClient = msClientFactory.getClient("nexmo");
+        NexmoClient nexmoClient1 = (NexmoClient) msClient;
+
+        AccountBalance accountBalance = nexmoClient1.getAccountBalance();
+        assertNotNull(accountBalance);
+    }
+
+    @Test
+    public void testGetAccountPricingForUS() throws RestInternalException, RestResponseException {
+        String countryCode = "US";
+
+        AccountPricing accountPricing = nexmoClient.getAccountPricing(countryCode);
+
+        assertNotNull(accountPricing);
     }
 
 
