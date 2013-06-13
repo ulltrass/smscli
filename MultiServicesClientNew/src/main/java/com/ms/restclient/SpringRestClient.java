@@ -39,6 +39,7 @@ public class SpringRestClient implements RestClient {
 //        connManager.setMaxTotal(1000);
 //        connManager.setDefaultMaxPerRoute(500);
 //        this.restTemplate = new RestTemplate(reqFactory);
+
         this.restTemplate = new RestTemplate();
     }
 
