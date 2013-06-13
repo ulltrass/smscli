@@ -3,6 +3,7 @@ package com.ms.restclient;
 import com.ms.util.Constants;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
+import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter;
@@ -15,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -81,8 +83,13 @@ public class SpringRestClient implements RestClient {
             // get Spring HttpEntity for request
             HttpEntity requestHttpEntity = getRequestHttpEntity(method, requestParameterMap, httpHeaders);
 
+            if (uriVariables == null) {
+                uriVariables = new HashMap<String, Object>();
+            }
+
             ResponseEntity responseEntity = restTemplate.exchange(endpointUrlAndParams, springHttpMethod, requestHttpEntity,
                     responseObjectClass, uriVariables);
+
 
             HttpStatus httpStatus = responseEntity.getStatusCode();
 
@@ -104,6 +111,8 @@ public class SpringRestClient implements RestClient {
 
     private List<HttpMessageConverter<?>> getMessageConverters() {
         List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+
+        messageConverters.add(new FormHttpMessageConverter());
 
         if (Constants.RESPONSE_FORMAT_JSON.equals(responseFormat)) {
             //Add the Jackson Message converter
@@ -171,7 +180,6 @@ public class SpringRestClient implements RestClient {
         } else {
             httpHeaders.set("Accept", "application/xml");
         }
-
 
         return httpHeaders;
     }

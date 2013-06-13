@@ -2,6 +2,7 @@ package com.ms.client;
 
 import com.ms.beans.nexmo.AccountBalance;
 import com.ms.beans.nexmo.AccountPricing;
+import com.ms.beans.nexmo.SMSResponse;
 import com.ms.exception.MsException;
 import com.ms.restclient.RestInternalException;
 import com.ms.restclient.RestResponseException;
@@ -51,6 +52,15 @@ public class NexmoClientTest {
         AccountPricing accountPricing = nexmoClient.getAccountPricing(countryCode);
 
         assertNotNull(accountPricing);
+    }
+
+    @Test
+    public void testSendSMSMessage() throws RestInternalException, RestResponseException {
+        SMSResponse response = nexmoClient.sendSMSMessage("TestMe", "0040741098025", "Test");
+
+        System.out.println(response);
+
+        assertNotNull(response);
     }
 
 

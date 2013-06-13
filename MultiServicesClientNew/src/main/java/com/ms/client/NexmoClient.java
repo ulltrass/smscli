@@ -2,6 +2,7 @@ package com.ms.client;
 
 import com.ms.beans.nexmo.AccountBalance;
 import com.ms.beans.nexmo.AccountPricing;
+import com.ms.beans.nexmo.SMSResponse;
 import com.ms.restclient.*;
 import com.ms.util.Constants;
 import com.ms.util.NexmoAuthenticationUtil;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -27,6 +29,8 @@ public class NexmoClient implements MsClient {
     private RestClient restClient;
     @Autowired
     private NexmoAuthenticationUtil nexmoAuthenticationUtil;
+    @Value("${nexmo.response.format}")
+    private String responseFormat;
 
     public AccountBalance getAccountBalance() throws RestResponseException, RestInternalException {
 
@@ -53,6 +57,22 @@ public class NexmoClient implements MsClient {
         AccountPricing accountPricing = restClient.sendRequest(restClientRequestInfo, null, AccountPricing.class, vars);
 
         return accountPricing;
+    }
+
+    public SMSResponse sendSMSMessage(String from, String to, String text) throws RestResponseException, RestInternalException {
+
+        RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
+        restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/sms/" + responseFormat.toLowerCase());
+        restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_POST);
+        Map<String, String> httpHeaderAttributeMap = new HashMap<String, String>();
+        httpHeaderAttributeMap.put("from", from);
+        httpHeaderAttributeMap.put("to", to);
+        httpHeaderAttributeMap.put("text", text);
+
+        SMSResponse response = restClient.sendRequest(restClientRequestInfo, httpHeaderAttributeMap, SMSResponse.class, null);
+
+        return response;
+
     }
 
 
