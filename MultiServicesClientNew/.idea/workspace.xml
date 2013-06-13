@@ -2,27 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84247f35-9f73-449a-9f8a-2709f4b7c5de" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__junit_junit_4_8_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__log4j_log4j_1_2_17.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_codehaus_jackson_jackson_core_asl_1_9_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_slf4j_slf4j_api_1_7_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_slf4j_slf4j_log4j12_1_7_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_springframework_spring_aop_3_2_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_springframework_spring_beans_3_2_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_springframework_spring_context_3_2_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_springframework_spring_core_3_2_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_springframework_spring_expression_3_2_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_springframework_spring_test_3_2_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_springframework_spring_web_3_2_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\freelancer\SMS Twilio\sms\MultiServicesClientNew\.idea\libraries\Maven__org_springframework_spring_webmvc_3_2_0_RELEASE.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MultiServicesClientNew.iml" afterPath="$PROJECT_DIR$/MultiServicesClientNew.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/ms/client/NexmoClientTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/ms/client/NexmoClientTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MultiServicesClientNew.iws" />
@@ -30,7 +9,7 @@
     <file path="/MsException.java" changelist="84247f35-9f73-449a-9f8a-2709f4b7c5de" time="1370987361976" ignored="false" />
     <file path="/NexmoClient.java" changelist="84247f35-9f73-449a-9f8a-2709f4b7c5de" time="1371152352319" ignored="false" />
     <file path="/MsClientFactory.java" changelist="84247f35-9f73-449a-9f8a-2709f4b7c5de" time="1370987382440" ignored="false" />
-    <file path="/Dummy.txt" changelist="84247f35-9f73-449a-9f8a-2709f4b7c5de" time="1371152772149" ignored="false" />
+    <file path="/Dummy.txt" changelist="84247f35-9f73-449a-9f8a-2709f4b7c5de" time="1371152884107" ignored="false" />
     <file path="/SMSResponse.java" changelist="84247f35-9f73-449a-9f8a-2709f4b7c5de" time="1371151891896" ignored="false" />
     <file path="/SMSMessageResponse.java" changelist="84247f35-9f73-449a-9f8a-2709f4b7c5de" time="1371151797316" ignored="false" />
     <file path="/SMSMessageEntityResponse.java" changelist="84247f35-9f73-449a-9f8a-2709f4b7c5de" time="1371151601113" ignored="false" />
@@ -535,7 +514,7 @@
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="settings.github" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../jsontojava/pom.xml" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -803,7 +782,11 @@
       <created>1371152781156</created>
       <updated>1371152781156</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added SMS and Bulk SMS sending">
+      <created>1371152904965</created>
+      <updated>1371152904966</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
