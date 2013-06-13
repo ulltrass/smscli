@@ -1,11 +1,10 @@
 package com.ms.client;
 
-import com.ms.beans.nexmo.xml.AccountBalance;
-import com.ms.beans.nexmo.xml.AccountPricing;
+import com.ms.beans.nexmo.AccountBalance;
+import com.ms.beans.nexmo.AccountPricing;
 import com.ms.restclient.*;
 import com.ms.util.Constants;
 import com.ms.util.NexmoAuthenticationUtil;
-import com.ms.util.RestClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -28,8 +27,6 @@ public class NexmoClient implements MsClient {
     private RestClient restClient;
     @Autowired
     private NexmoAuthenticationUtil nexmoAuthenticationUtil;
-    @Autowired
-    private RestClientUtil restClientUtil;
 
     public AccountBalance getAccountBalance() throws RestResponseException, RestInternalException {
 
@@ -38,9 +35,8 @@ public class NexmoClient implements MsClient {
         restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_GET);
 
         Map<String, String> vars = nexmoAuthenticationUtil.getAuthVars();
-        Map<String, String> httpHeaderAttributeMap = restClientUtil.getXMLAcceptHeader();
 
-        AccountBalance accountBalance = restClient.sendRequest(restClientRequestInfo, httpHeaderAttributeMap, AccountBalance.class, vars);
+        AccountBalance accountBalance = restClient.sendRequest(restClientRequestInfo, null, AccountBalance.class, vars);
 
         return accountBalance;
     }
@@ -52,17 +48,12 @@ public class NexmoClient implements MsClient {
         restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_GET);
 
         Map<String, String> vars = nexmoAuthenticationUtil.getAuthVars();
-        Map<String, String> httpHeaderAttributeMap = restClientUtil.getXMLAcceptHeader();
         vars.put("country", countryCode);
 
-        AccountPricing accountPricing = restClient.sendRequest(restClientRequestInfo, httpHeaderAttributeMap, AccountPricing.class, vars);
+        AccountPricing accountPricing = restClient.sendRequest(restClientRequestInfo, null, AccountPricing.class, vars);
 
         return accountPricing;
     }
-
-
-
-
 
 
 }

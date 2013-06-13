@@ -1,7 +1,7 @@
 package com.ms.client;
 
-import com.ms.beans.nexmo.xml.AccountBalance;
-import com.ms.beans.nexmo.xml.AccountPricing;
+import com.ms.beans.nexmo.AccountBalance;
+import com.ms.beans.nexmo.AccountPricing;
 import com.ms.exception.MsException;
 import com.ms.restclient.RestInternalException;
 import com.ms.restclient.RestResponseException;

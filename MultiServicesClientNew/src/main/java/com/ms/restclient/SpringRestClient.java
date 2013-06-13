@@ -166,6 +166,13 @@ public class SpringRestClient implements RestClient {
             }
         }
 
+        if (Constants.RESPONSE_FORMAT_JSON.equals(responseFormat)) {
+            httpHeaders.set("Accept", "application/json");
+        } else {
+            httpHeaders.set("Accept", "application/xml");
+        }
+
+
         return httpHeaders;
     }
 
