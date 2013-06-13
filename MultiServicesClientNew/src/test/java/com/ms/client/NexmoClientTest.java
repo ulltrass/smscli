@@ -2,6 +2,7 @@ package com.ms.client;
 
 import com.ms.beans.nexmo.AccountBalance;
 import com.ms.beans.nexmo.AccountPricing;
+import com.ms.beans.nexmo.SMSMessage;
 import com.ms.beans.nexmo.SMSResponse;
 import com.ms.exception.MsException;
 import com.ms.restclient.RestInternalException;
@@ -12,7 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -56,11 +62,26 @@ public class NexmoClientTest {
 
     @Test
     public void testSendSMSMessage() throws RestInternalException, RestResponseException {
-        SMSResponse response = nexmoClient.sendSMSMessage("TestMe", "0040741098025", "Test");
+        SMSResponse response = nexmoClient.sendSMSMessage("13172255527", "0040741098025", "Test");
 
-        System.out.println(response);
+        System.out.println(response.getMessages().get(0).getErrorText());
 
         assertNotNull(response);
+    }
+
+
+    @Test
+    public void testSendBulkSMSMessage() throws RestInternalException, RestResponseException {
+        List<SMSMessage> smsMessages = new ArrayList<SMSMessage>();
+        smsMessages.add(new SMSMessage("13172255527", "0040741098025", "Test bulk 1"));
+        smsMessages.add(new SMSMessage("13172255527", "0040741098025", "Test bulk 2"));
+
+        List<SMSResponse> smsResponses = nexmoClient.sendBulkSMSMessage(smsMessages);
+
+        assertTrue(smsResponses.get(0).getCount() == 1);
+        assertTrue(smsResponses.get(1).getCount() == 1);
+        assertTrue(smsResponses.get(0).getMessages().get(0).getStatus() == 0);
+        assertTrue(smsResponses.get(1).getMessages().get(0).getStatus() == 0);
     }
 
 
