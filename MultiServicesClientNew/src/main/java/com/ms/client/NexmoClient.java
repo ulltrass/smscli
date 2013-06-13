@@ -2,6 +2,7 @@ package com.ms.client;
 
 import com.ms.beans.nexmo.AccountBalance;
 import com.ms.beans.nexmo.AccountPricing;
+import com.ms.beans.nexmo.SMSMessage;
 import com.ms.beans.nexmo.SMSResponse;
 import com.ms.restclient.*;
 import com.ms.util.Constants;
@@ -10,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -64,15 +67,45 @@ public class NexmoClient implements MsClient {
         RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
         restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/sms/" + responseFormat.toLowerCase());
         restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_POST);
-        Map<String, String> httpHeaderAttributeMap = new HashMap<String, String>();
-        httpHeaderAttributeMap.put("from", from);
-        httpHeaderAttributeMap.put("to", to);
-        httpHeaderAttributeMap.put("text", text);
 
-        SMSResponse response = restClient.sendRequest(restClientRequestInfo, httpHeaderAttributeMap, SMSResponse.class, null);
+        Map<String, String> requestParameterMap = new HashMap<String, String>();
+        requestParameterMap.put("api_key", nexmoAuthenticationUtil.getApiKey());
+        requestParameterMap.put("api_secret", nexmoAuthenticationUtil.getApiSecret());
+        requestParameterMap.put("from", from);
+        requestParameterMap.put("to", to);
+        requestParameterMap.put("text", text);
+        restClientRequestInfo.setRequestParameterMap(requestParameterMap);
+
+
+        SMSResponse response = restClient.sendRequest(restClientRequestInfo, null, SMSResponse.class, null);
 
         return response;
+    }
 
+    public List<SMSResponse> sendBulkSMSMessage(List<SMSMessage> smsMessages) throws RestResponseException, RestInternalException {
+        List<SMSResponse> smsResponses = new ArrayList<SMSResponse>();
+
+        RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
+        restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/sms/" + responseFormat.toLowerCase());
+        restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_POST);
+
+        Map<String, String> requestParameterMap = new HashMap<String, String>();
+        requestParameterMap.put("api_key", nexmoAuthenticationUtil.getApiKey());
+        requestParameterMap.put("api_secret", nexmoAuthenticationUtil.getApiSecret());
+
+        for (SMSMessage smsMessage : smsMessages) {
+
+            requestParameterMap.put("from", smsMessage.getFrom());
+            requestParameterMap.put("to", smsMessage.getTo());
+            requestParameterMap.put("text", smsMessage.getText());
+            restClientRequestInfo.setRequestParameterMap(requestParameterMap);
+
+            SMSResponse response = restClient.sendRequest(restClientRequestInfo, null, SMSResponse.class, null);
+
+            smsResponses.add(response);
+        }
+
+        return smsResponses;
     }
 
 

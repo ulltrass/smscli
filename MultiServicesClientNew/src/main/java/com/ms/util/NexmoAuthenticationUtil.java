@@ -30,5 +30,11 @@ public class NexmoAuthenticationUtil {
         return vars;
     }
 
+    public String getApiKey() {
+        return apiKey;
+    }
 
+    public String getApiSecret() {
+        return apiSecret;
+    }
 }
