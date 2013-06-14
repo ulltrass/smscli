@@ -3,6 +3,7 @@ package com.ms.client;
 import com.ms.beans.SMSResponse;
 import com.ms.beans.nexmo.SMSMessage;
 import com.ms.beans.twilio.SMSResponseTw;
+import com.ms.exception.MsException;
 import com.ms.restclient.RestInternalException;
 import com.ms.restclient.RestResponseException;
 import org.junit.Test;
@@ -14,7 +15,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -30,13 +30,25 @@ public class TwilioClientTest {
 
     @Autowired
     TwilioClient twilioClient;
+    MsClientFactory msClientFactory = new MsClientFactory();
+
+    @Test
+    public void testGetAccountBalanceFromFactory() throws RestInternalException, RestResponseException, MsException {
+        MsClient msClient = msClientFactory.getClient("twilio");
+        TwilioClient twilioClient1 = (TwilioClient) msClient;
+
+        SMSResponseTw responseTw = (SMSResponseTw) twilioClient1.sendSMSMessage("+15122707326", "+40741098025", "Test");
+
+        assertTrue(!responseTw.getStatus().equals("400"));
+    }
+
 
 
     @Test
     public void testSendSMSMessage() throws RestInternalException, RestResponseException {
         SMSResponseTw responseTw = (SMSResponseTw) twilioClient.sendSMSMessage("+15122707326", "+40741098025", "Test");
 
-        assertNotNull(responseTw);
+        assertTrue(!responseTw.getStatus().equals("400"));
     }
 
     @Test
