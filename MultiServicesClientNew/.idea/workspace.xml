@@ -1,33 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84247f35-9f73-449a-9f8a-2709f4b7c5de" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\beans\SMSResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\beans\nexmo\AccountBalance.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\beans\nexmo\AccountPricing.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\beans\nexmo\SMSMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\beans\nexmo\SMSMessageEntityResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\beans\nexmo\SMSMessageResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\beans\nexmo\SMSResponseNx.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\beans\twilio\SMSResponseTw.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\client\MsClient.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\client\MsClientFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\client\NexmoClient.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\client\TwilioClient.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\exception\MsException.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\restclient\RestClient.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\restclient\RestClientRequestInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\restclient\RestInternalException.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\restclient\RestResponseException.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\restclient\SpringRestClient.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\util\Constants.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\util\NexmoAuthenticationUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\classes\com\ms\util\TwilioAuthenticationUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\test-classes\com\ms\client\NexmoClientTest.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\test-classes\com\ms\client\TwilioClientTest.class" afterPath="" />
+    <list default="true" id="84247f35-9f73-449a-9f8a-2709f4b7c5de" name="Default" comment="Added tests with factory">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/ms/client/TwilioClientTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/ms/client/TwilioClientTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java" />
     </list>
     <ignored path="MultiServicesClientNew.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -114,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="141" selection-start="3545" selection-end="3545" vertical-scroll-proportion="0.0">
+            <state line="73" column="38" selection-start="2604" selection-end="2604" vertical-scroll-proportion="0.048220437">
               <folding />
             </state>
           </provider>
@@ -126,8 +102,10 @@
       <file leaf-file-name="SMSMessageResponse.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="30" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="4" column="0" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,10 +137,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TwilioClientTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TwilioClientTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/ms/client/TwilioClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="25" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.5315729">
+            <state line="44" column="69" selection-start="1457" selection-end="1457" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,7 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/xml/AccountBalance.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/xml/AccountPricing.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/AccountPricing.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSResponse.java" />
@@ -211,6 +188,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/client/MsClientFactory.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/ms/client/TwilioClientTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java" />
       </list>
     </option>
   </component>
@@ -1106,20 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="141" selection-start="3545" selection-end="3545" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="30" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/ms/client/NexmoClientTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="9" selection-start="1381" selection-end="1749" vertical-scroll-proportion="0.0">
@@ -1136,10 +1100,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/ms/client/TwilioClientTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="25" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.5315729">
+        <state line="44" column="69" selection-start="1457" selection-end="1457" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="38" selection-start="2604" selection-end="2604" vertical-scroll-proportion="0.048220437">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,11 +1,7 @@
 package com.ms.beans.nexmo;
 
-import com.sun.deploy.xml.XMLAttribute;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
-
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 
 /**
  * Created with IntelliJ IDEA.
