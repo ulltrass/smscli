@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84247f35-9f73-449a-9f8a-2709f4b7c5de" name="Default" comment="Added tests with factory">
+      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\surefire-reports\TEST-com.ms.client.NexmoClientTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\surefire-reports\TEST-com.ms.client.TwilioClientTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\surefire-reports\com.ms.client.NexmoClientTest.txt" afterPath="" />
+      <change type="DELETED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\target\surefire-reports\com.ms.client.TwilioClientTest.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MultiServicesClient-jar-with-dependencies.jar" afterPath="$PROJECT_DIR$/target/MultiServicesClient-jar-with-dependencies.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MultiServicesClient.jar" afterPath="$PROJECT_DIR$/target/MultiServicesClient.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MultiServicesClientNew.iml" afterPath="$PROJECT_DIR$/MultiServicesClientNew.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="MultiServicesClientNew.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,7 +101,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="38" selection-start="2604" selection-end="2604" vertical-scroll-proportion="0.048220437">
+            <state line="107" column="31" selection-start="3970" selection-end="3970" vertical-scroll-proportion="0.8633754">
               <folding />
             </state>
           </provider>
@@ -185,10 +193,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ms/beans/twilio/SMSResponseTw.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/restclient/SpringRestClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/client/TwilioClient.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/client/MsClientFactory.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/ms/client/TwilioClientTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -1075,15 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/client/NexmoClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="18" selection-start="2640" selection-end="2640" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#3704#3717#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/ms/client/NexmoClientTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="9" selection-start="1381" selection-end="1749" vertical-scroll-proportion="0.0">
@@ -1116,9 +1115,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/client/NexmoClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="18" selection-start="2640" selection-end="2640" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#3704#3717#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="38" selection-start="2604" selection-end="2604" vertical-scroll-proportion="0.048220437">
+        <state line="107" column="31" selection-start="3970" selection-end="3970" vertical-scroll-proportion="0.8633754">
           <folding />
         </state>
       </provider>
