@@ -1,10 +1,14 @@
 package com.ms.client;
 
+import com.ms.beans.SMSResponse;
 import com.ms.beans.nexmo.AccountBalance;
 import com.ms.beans.nexmo.AccountPricing;
 import com.ms.beans.nexmo.SMSMessage;
-import com.ms.beans.nexmo.SMSResponse;
-import com.ms.restclient.*;
+import com.ms.beans.nexmo.SMSResponseNx;
+import com.ms.restclient.RestClient;
+import com.ms.restclient.RestClientRequestInfo;
+import com.ms.restclient.RestInternalException;
+import com.ms.restclient.RestResponseException;
 import com.ms.util.Constants;
 import com.ms.util.NexmoAuthenticationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,7 +66,7 @@ public class NexmoClient implements MsClient {
         return accountPricing;
     }
 
-    public SMSResponse sendSMSMessage(String from, String to, String text) throws RestResponseException, RestInternalException {
+    public SMSResponseNx sendSMSMessage(String from, String to, String text) throws RestResponseException, RestInternalException {
 
         RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
         restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/sms/" + responseFormat.toLowerCase());
@@ -77,13 +81,13 @@ public class NexmoClient implements MsClient {
         restClientRequestInfo.setRequestParameterMap(requestParameterMap);
 
 
-        SMSResponse response = restClient.sendRequest(restClientRequestInfo, null, SMSResponse.class, null);
+        SMSResponseNx responseNx = restClient.sendRequest(restClientRequestInfo, null, SMSResponseNx.class, null);
 
-        return response;
+        return responseNx;
     }
 
     public List<SMSResponse> sendBulkSMSMessage(List<SMSMessage> smsMessages) throws RestResponseException, RestInternalException {
-        List<SMSResponse> smsResponses = new ArrayList<SMSResponse>();
+        List<SMSResponse> smsResponseNxes = new ArrayList<SMSResponse>();
 
         RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
         restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/sms/" + responseFormat.toLowerCase());
@@ -100,12 +104,12 @@ public class NexmoClient implements MsClient {
             requestParameterMap.put("text", smsMessage.getText());
             restClientRequestInfo.setRequestParameterMap(requestParameterMap);
 
-            SMSResponse response = restClient.sendRequest(restClientRequestInfo, null, SMSResponse.class, null);
+            SMSResponseNx responseNx = restClient.sendRequest(restClientRequestInfo, null, SMSResponseNx.class, null);
 
-            smsResponses.add(response);
+            smsResponseNxes.add(responseNx);
         }
 
-        return smsResponses;
+        return smsResponseNxes;
     }
 
 

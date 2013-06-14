@@ -1,6 +1,7 @@
 package com.ms.restclient;
 
 import com.ms.util.Constants;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.http.converter.FormHttpMessageConverter;
@@ -13,6 +14,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -58,6 +60,7 @@ public class SpringRestClient implements RestClient {
      */
     public <T> T sendRequest(RestClientRequestInfo restClientRequestInfo, Map<String, String> httpHeaderAttributeMap,
                              Class<T> responseObjectClass, Map<String, ?> uriVariables) throws RestInternalException, RestResponseException {
+
         try {
             String method = restClientRequestInfo.getRequestMethod();
             Map<String, String> requestParameterMap = restClientRequestInfo.getRequestParameterMap();
@@ -70,7 +73,7 @@ public class SpringRestClient implements RestClient {
             }
 
             // get Spring HttpHeaders
-            HttpHeaders httpHeaders = getHttpHeaders(httpHeaderAttributeMap, restClientRequestInfo.getRequestMediaType());
+            HttpHeaders httpHeaders = getHttpHeaders(httpHeaderAttributeMap);
 
             // get message converters - this can be either XML or JSON
             List<HttpMessageConverter<?>> messageConverters = getMessageConverters();
@@ -94,8 +97,9 @@ public class SpringRestClient implements RestClient {
             HttpStatus httpStatus = responseEntity.getStatusCode();
 
             // throw RestResponseException if status code is not OK (200)
-            if (!HttpStatus.OK.equals(httpStatus)) {
-                throw new RestResponseException(responseEntity.getBody().toString(), httpStatus.value());
+            if (!HttpStatus.OK.equals(httpStatus) && !HttpStatus.CREATED.equals(httpStatus)) {
+                // throw new RestResponseException(responseEntity.getBody().toString(), httpStatus.value());
+                //todo: add logging
             }
 
             Object response = responseEntity.getBody();
@@ -103,9 +107,17 @@ public class SpringRestClient implements RestClient {
             return responseObjectClass.cast(response);
 
         } catch (HttpClientErrorException cee) {
-            throw new RestResponseException(cee.getResponseBodyAsString(), cee.getStatusCode().value());
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                Object response = mapper.readValue(cee.getResponseBodyAsByteArray(), responseObjectClass);
+                return responseObjectClass.cast(response);
+
+            } catch (IOException e) {
+                throw new RestResponseException(cee.getResponseBodyAsString(), cee.getStatusCode().value());
+            }
+
         } catch (Exception e) {
-            throw new RestInternalException("Exception of type " + e.getClass().getName() + " occured, see stack trace ", e);
+            throw new RestInternalException("Exception of type " + e.getMessage() + " occured, see stack trace ", e);
         }
     }
 
@@ -166,7 +178,7 @@ public class SpringRestClient implements RestClient {
         return requestHttpEntity;
     }
 
-    private HttpHeaders getHttpHeaders(Map<String, String> httpHeaderAttributeMap, MediaType requestMediaType) {
+    private HttpHeaders getHttpHeaders(Map<String, String> httpHeaderAttributeMap) {
         HttpHeaders httpHeaders = new HttpHeaders();
 
         if (httpHeaderAttributeMap != null) {

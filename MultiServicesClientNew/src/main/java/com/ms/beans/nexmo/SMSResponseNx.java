@@ -1,5 +1,6 @@
 package com.ms.beans.nexmo;
 
+import com.ms.beans.SMSResponse;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
@@ -16,7 +17,7 @@ import java.util.List;
  */
 @XmlRootElement(name = "outbound-country-pricing")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SMSResponse {
+public class SMSResponseNx implements SMSResponse{
 
     @JsonProperty(value = "message-count")
     private Integer count;
