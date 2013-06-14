@@ -19,8 +19,8 @@ public class MsClientFactory {
 
         if (name.equals("nexmo")) {
             msClient = context.getBean(NexmoClient.class);
-        } else if (name.equals("not implemented")) {
-
+        } else if (name.equals("twilio")) {
+            msClient = context.getBean(TwilioClient.class);
         } else {
             throw new MsException();
         }
