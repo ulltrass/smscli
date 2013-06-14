@@ -1,9 +1,10 @@
 package com.ms.client;
 
+import com.ms.beans.SMSResponse;
 import com.ms.beans.nexmo.AccountBalance;
 import com.ms.beans.nexmo.AccountPricing;
 import com.ms.beans.nexmo.SMSMessage;
-import com.ms.beans.nexmo.SMSResponse;
+import com.ms.beans.nexmo.SMSResponseNx;
 import com.ms.exception.MsException;
 import com.ms.restclient.RestInternalException;
 import com.ms.restclient.RestResponseException;
@@ -16,7 +17,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -62,11 +62,9 @@ public class NexmoClientTest {
 
     @Test
     public void testSendSMSMessage() throws RestInternalException, RestResponseException {
-        SMSResponse response = nexmoClient.sendSMSMessage("13172255527", "0040741098025", "Test");
+        SMSResponseNx responseNx = nexmoClient.sendSMSMessage("13172255527", "0040741098025", "Test");
 
-        System.out.println(response.getMessages().get(0).getErrorText());
-
-        assertNotNull(response);
+        assertNotNull(responseNx);
     }
 
 
@@ -76,12 +74,12 @@ public class NexmoClientTest {
         smsMessages.add(new SMSMessage("13172255527", "0040741098025", "Test bulk 1"));
         smsMessages.add(new SMSMessage("13172255527", "0040741098025", "Test bulk 2"));
 
-        List<SMSResponse> smsResponses = nexmoClient.sendBulkSMSMessage(smsMessages);
+        List<SMSResponse> smsResponseNxes = nexmoClient.sendBulkSMSMessage(smsMessages);
 
-        assertTrue(smsResponses.get(0).getCount() == 1);
-        assertTrue(smsResponses.get(1).getCount() == 1);
-        assertTrue(smsResponses.get(0).getMessages().get(0).getStatus() == 0);
-        assertTrue(smsResponses.get(1).getMessages().get(0).getStatus() == 0);
+        assertTrue(((SMSResponseNx) smsResponseNxes.get(0)).getCount() == 1);
+        assertTrue(((SMSResponseNx) smsResponseNxes.get(1)).getCount() == 1);
+        assertTrue(((SMSResponseNx) smsResponseNxes.get(0)).getMessages().get(0).getStatus() == 0);
+        assertTrue(((SMSResponseNx) smsResponseNxes.get(1)).getMessages().get(0).getStatus() == 0);
     }
 
 
