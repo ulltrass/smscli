@@ -1,10 +1,8 @@
 package com.ms.client;
 
 import com.ms.beans.SMSResponse;
-import com.ms.beans.nexmo.AccountBalance;
-import com.ms.beans.nexmo.AccountPricing;
-import com.ms.beans.nexmo.SMSMessage;
-import com.ms.beans.nexmo.SMSResponseNx;
+import com.ms.beans.nexmo.*;
+import com.ms.exception.MsException;
 import com.ms.restclient.RestClient;
 import com.ms.restclient.RestClientRequestInfo;
 import com.ms.restclient.RestInternalException;
@@ -66,6 +64,132 @@ public class NexmoClient implements MsClient {
         return accountPricing;
     }
 
+    public AccountNumbers getAccountNumbers() throws RestResponseException, RestInternalException {
+
+        RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
+        restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/account/numbers/{api_key}/{api_secret}");
+        restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_GET);
+
+        Map<String, String> vars = nexmoAuthenticationUtil.getAuthVars();
+
+        AccountNumbers accountNumbers = restClient.sendRequest(restClientRequestInfo, null, AccountNumbers.class, vars);
+
+        return accountNumbers;
+    }
+
+    public AccountSettings updateAccountSettings(String apiSecret) throws RestResponseException, RestInternalException, MsException {
+
+        if (apiSecret.length() > 8) {
+            throw new MsException("api_secret size cannot be larger than 8 characters ");
+        }
+
+        RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
+        restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/account/settings/{api_key}/{api_secret}?newSecret={new_secret}");
+        restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_POST);
+
+        Map<String, String> vars = nexmoAuthenticationUtil.getAuthVars();
+        vars.put("new_secret", apiSecret);
+
+        AccountSettings accountSettings = restClient.sendRequest(restClientRequestInfo, null, AccountSettings.class, vars);
+
+        return accountSettings;
+    }
+
+    public AccountNumbers searchNumbers(String countryCode, String pattern) throws RestResponseException, RestInternalException, MsException {
+        String uri = "/number/search/{api_key}/{api_secret}/{country}";
+        Map<String, String> vars = nexmoAuthenticationUtil.getAuthVars();
+        vars.put("country", countryCode);
+
+        if (pattern != null) {
+            uri = uri + "?pattern={search-pattern}";
+            vars.put("search-pattern", pattern);
+        }
+
+        RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
+        restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + uri);
+        restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_GET);
+
+        AccountNumbers accountNumbers = restClient.sendRequest(restClientRequestInfo, null, AccountNumbers.class, vars);
+
+        return accountNumbers;
+    }
+
+    public AccountSettings buyNumber(String country, String msisdn) throws RestResponseException, RestInternalException, MsException {
+
+
+        RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
+        restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/number/buy/{api_key}/{api_secret}/{country}/{msisdn}");
+        restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_POST);
+
+        Map<String, String> vars = nexmoAuthenticationUtil.getAuthVars();
+        vars.put("country", country);
+        vars.put("msisdn", msisdn);
+
+        AccountSettings accountSettings = restClient.sendRequest(restClientRequestInfo, null, AccountSettings.class, vars);
+
+        return accountSettings;
+    }
+
+    public AccountSettings cancelNumber(String country, String msisdn) throws RestResponseException, RestInternalException, MsException {
+
+        RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
+        restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/number/cancel/{api_key}/{api_secret}/{country}/{msisdn}");
+        restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_POST);
+
+        Map<String, String> vars = nexmoAuthenticationUtil.getAuthVars();
+        vars.put("country", country);
+        vars.put("msisdn", msisdn);
+
+        AccountSettings accountSettings = restClient.sendRequest(restClientRequestInfo, null, AccountSettings.class, vars);
+
+        return accountSettings;
+    }
+
+    public AccountSettings updateNumber(String country, String msisdn) throws RestResponseException, RestInternalException, MsException {
+
+        RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
+        restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/number/update/{api_key}/{api_secret}/{country}/{msisdn}");
+        restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_POST);
+
+        Map<String, String> vars = nexmoAuthenticationUtil.getAuthVars();
+        vars.put("country", country);
+        vars.put("msisdn", msisdn);
+
+        AccountSettings accountSettings = restClient.sendRequest(restClientRequestInfo, null, AccountSettings.class, vars);
+
+        return accountSettings;
+    }
+
+    public SMSMessageResponse searchMessage(String id) throws RestResponseException, RestInternalException {
+
+        RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
+        restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/search/message/{api_key}/{api_secret}/{id}");
+        restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_GET);
+
+        Map<String, String> vars = nexmoAuthenticationUtil.getAuthVars();
+        vars.put("id", id);
+
+        SMSMessageResponse smsMessageResponse = restClient.sendRequest(restClientRequestInfo, null, SMSMessageResponse.class, vars);
+
+        return smsMessageResponse;
+    }
+
+
+    public SMSMessageResponse searchRejectedMessages(String date) throws RestResponseException, RestInternalException {
+
+        RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
+        restClientRequestInfo.setEndpointUrl(nexmoBaseUrl + "/search/rejections/{api_key}/{api_secret}?date={date}");
+        restClientRequestInfo.setRequestMethod(Constants.HTTP_METHOD_GET);
+
+        Map<String, String> vars = nexmoAuthenticationUtil.getAuthVars();
+        vars.put("date", date);
+
+        SMSMessageResponse smsMessageResponse = restClient.sendRequest(restClientRequestInfo, null, SMSMessageResponse.class, vars);
+
+        return smsMessageResponse;
+    }
+
+
     public SMSResponseNx sendSMSMessage(String from, String to, String text) throws RestResponseException, RestInternalException {
 
         RestClientRequestInfo restClientRequestInfo = new RestClientRequestInfo();
@@ -111,6 +235,5 @@ public class NexmoClient implements MsClient {
 
         return smsResponseNxes;
     }
-
 
 }

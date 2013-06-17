@@ -1,22 +1,21 @@
 package com.ms.client;
 
 import com.ms.beans.SMSResponse;
-import com.ms.beans.nexmo.AccountBalance;
-import com.ms.beans.nexmo.AccountPricing;
-import com.ms.beans.nexmo.SMSMessage;
-import com.ms.beans.nexmo.SMSResponseNx;
+import com.ms.beans.nexmo.*;
 import com.ms.exception.MsException;
 import com.ms.restclient.RestInternalException;
 import com.ms.restclient.RestResponseException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -34,6 +33,9 @@ public class NexmoClientTest {
     @Autowired
     private NexmoClient nexmoClient;
     private MsClientFactory msClientFactory = new MsClientFactory();
+    @Value("${nexmo.api.secret}")
+    private String currentApiSecret;
+
 
     @Test
     public void testGetAccountBalance() throws RestInternalException, RestResponseException {
@@ -59,6 +61,62 @@ public class NexmoClientTest {
 
         assertNotNull(accountPricing);
     }
+
+    @Test
+    public void testGetAccountNumbers() throws RestInternalException, RestResponseException {
+
+        AccountNumbers accountNumbers = nexmoClient.getAccountNumbers();
+
+        assertNotNull(accountNumbers);
+    }
+
+    @Test
+    public void testUpdateAccountSecret() throws RestInternalException, RestResponseException, MsException {
+        String newSecret = "87dc1451";
+        AccountSettings accountSettings = nexmoClient.updateAccountSettings(newSecret);
+
+        assertNotNull(accountSettings);
+        assertEquals(newSecret, accountSettings.getApiSecret());
+    }
+
+    @Test
+    public void testNumberSearch() throws RestInternalException, RestResponseException, MsException {
+        String countryCode = "US";
+
+        AccountNumbers accountNumbers = nexmoClient.searchNumbers(countryCode, null);
+
+        assertNotNull(accountNumbers);
+        assertTrue(accountNumbers.getNumbers().size() > 0);
+    }
+
+    @Test
+    public void testNumberSearchWithPattern() throws RestInternalException, RestResponseException, MsException {
+        String countryCode = "US";
+        String pattern = "19";
+
+        AccountNumbers accountNumbers = nexmoClient.searchNumbers(countryCode, pattern);
+
+        assertNotNull(accountNumbers);
+        assertTrue(accountNumbers.getNumbers().size() > 0);
+    }
+
+
+    @Test
+    public void testSearchMessage() throws RestInternalException, RestResponseException {
+        SMSResponseNx responseNx = nexmoClient.sendSMSMessage("13172255527", "0040741098025", "Test");
+
+        assertNotNull(responseNx);
+        assertNotNull(responseNx.getMessages());
+        assertNotNull(responseNx.getMessages().get(0));
+
+        String messageId = responseNx.getMessages().get(0).getMessageId();
+
+        SMSMessageResponse smsMessageResponse = nexmoClient.searchMessage(messageId);
+
+        //This might be null as the message becomes searcheable after a few minutes since it was sent
+        assertNotNull(smsMessageResponse);
+    }
+
 
     @Test
     public void testSendSMSMessage() throws RestInternalException, RestResponseException {

@@ -31,6 +31,30 @@ public class SMSMessageResponse {
     private String network;
 
     @JsonProperty
+    private String type;
+    @JsonProperty(value = "account-id")
+    private String accountId;
+    @JsonProperty
+    private String from;
+    @JsonProperty
+    private String body;
+    @JsonProperty
+    private Float price;
+    @JsonProperty(value = "date-received")
+    private String dateReceived;
+    @JsonProperty(value = "date-closed")
+    private String dateClosed;
+    @JsonProperty(value = "final-status")
+    private String finalStatus;
+    @JsonProperty
+    private String latency;
+    @JsonProperty(value = "error-code")
+    private String errorCode;
+    @JsonProperty(value = "error-code-label")
+    private String errorCodeLabel;
+
+
+    @JsonProperty
     private Integer status;
     @JsonProperty(value = "error-text")
     private String errorText;
@@ -97,5 +121,93 @@ public class SMSMessageResponse {
 
     public void setNetwork(String network) {
         this.network = network;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+    public String getDateReceived() {
+        return dateReceived;
+    }
+
+    public void setDateReceived(String dateReceived) {
+        this.dateReceived = dateReceived;
+    }
+
+    public String getDateClosed() {
+        return dateClosed;
+    }
+
+    public void setDateClosed(String dateClosed) {
+        this.dateClosed = dateClosed;
+    }
+
+    public String getFinalStatus() {
+        return finalStatus;
+    }
+
+    public void setFinalStatus(String finalStatus) {
+        this.finalStatus = finalStatus;
+    }
+
+    public String getLatency() {
+        return latency;
+    }
+
+    public void setLatency(String latency) {
+        this.latency = latency;
+    }
+
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public String getErrorCodeLabel() {
+        return errorCodeLabel;
+    }
+
+    public void setErrorCodeLabel(String errorCodeLabel) {
+        this.errorCodeLabel = errorCodeLabel;
     }
 }

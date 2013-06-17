@@ -22,7 +22,7 @@ public class MsClientFactory {
         } else if (name.equals("twilio")) {
             msClient = context.getBean(TwilioClient.class);
         } else {
-            throw new MsException();
+            throw new MsException("No provider selected. Use nexmo or twilio!");
         }
 
         return msClient;

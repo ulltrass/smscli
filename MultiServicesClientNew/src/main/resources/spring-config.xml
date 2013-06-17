@@ -6,6 +6,6 @@
     <context:annotation-config />
     <context:component-scan base-package="com.ms"/>
 
-    <context:property-placeholder location="app-config.properties"/>
+    <context:property-placeholder location="file:../config/app-config.properties"/>
 
 </beans>
