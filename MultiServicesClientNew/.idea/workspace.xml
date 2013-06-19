@@ -2,26 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84247f35-9f73-449a-9f8a-2709f4b7c5de" name="Default" comment="Added tests with factory">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/app-config.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/AccountNumber.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/AccountNumbers.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/AccountSettings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MultiServicesClient-jar-with-dependencies.jar" afterPath="$PROJECT_DIR$/target/MultiServicesClient-jar-with-dependencies.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MultiServicesClient.jar" afterPath="$PROJECT_DIR$/target/MultiServicesClient.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ms/beans/nexmo/SMSMessageResponse.class" afterPath="$PROJECT_DIR$/target/classes/com/ms/beans/nexmo/SMSMessageResponse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ms/client/MsClientFactory.class" afterPath="$PROJECT_DIR$/target/classes/com/ms/client/MsClientFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ms/client/NexmoClient.class" afterPath="$PROJECT_DIR$/target/classes/com/ms/client/NexmoClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ms/exception/MsException.class" afterPath="$PROJECT_DIR$/target/classes/com/ms/exception/MsException.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/SMSResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountBalance.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountNumber.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountNumbers.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountPricing.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountSettings.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessageEntityResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessageResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSResponseNx.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/twilio/SMSResponseTw.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/client/MsClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/client/MsClientFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/client/NexmoClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/client/TwilioClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/exception/MsException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/restclient/RestClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/restclient/RestClientRequestInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/restclient/RestInternalException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/restclient/RestResponseException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/restclient/SpringRestClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/util/Constants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/util/NexmoAuthenticationUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/util/TwilioAuthenticationUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/msnew/client/NexmoClientTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/msnew/client/TwilioClientTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/ms/client/NexmoClientTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/ms/client/NexmoClientTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/AppTests.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/AppTests.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/HelloApp.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/HelloApp.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ms/client/MsClientFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/ms/client/MsClientFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ms/client/NexmoClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/ms/client/NexmoClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ms/exception/MsException.java" afterPath="$PROJECT_DIR$/src/main/java/com/ms/exception/MsException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/ms/client/NexmoClientTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/ms/client/NexmoClientTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring-config.xml" afterPath="$PROJECT_DIR$/target/classes/spring-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\SMSResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/SMSResponse.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\nexmo\AccountBalance.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountBalance.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\nexmo\AccountNumber.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountNumber.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\nexmo\AccountNumbers.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountNumbers.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\nexmo\AccountPricing.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountPricing.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\nexmo\AccountSettings.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountSettings.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\nexmo\SMSMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessage.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\nexmo\SMSMessageEntityResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessageEntityResponse.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\nexmo\SMSMessageResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessageResponse.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\nexmo\SMSResponseNx.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSResponseNx.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\beans\twilio\SMSResponseTw.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/beans/twilio/SMSResponseTw.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\client\MsClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/client/MsClient.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\client\MsClientFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/client/MsClientFactory.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\client\NexmoClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/client/NexmoClient.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\client\TwilioClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/client/TwilioClient.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\exception\MsException.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/exception/MsException.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\restclient\RestClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/restclient/RestClient.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\restclient\RestClientRequestInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/restclient/RestClientRequestInfo.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\restclient\RestInternalException.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/restclient/RestInternalException.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\restclient\RestResponseException.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/restclient/RestResponseException.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\restclient\SpringRestClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/restclient/SpringRestClient.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\util\Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/util/Constants.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\util\NexmoAuthenticationUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/util/NexmoAuthenticationUtil.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\main\java\com\ms\util\TwilioAuthenticationUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/msnew/util/TwilioAuthenticationUtil.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\test\java\com\ms\client\NexmoClientTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/msnew/client/NexmoClientTest.java" />
+      <change type="MOVED" beforePath="D:\altele\free\MultiServicesClientNew\smscli\MultiServicesClientNew\src\test\java\com\ms\client\TwilioClientTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/msnew/client/TwilioClientTest.java" />
     </list>
     <ignored path="MultiServicesClientNew.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,11 +124,11 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="NexmoClient.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/client/NexmoClient.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/client/NexmoClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="185" column="19" selection-start="8071" selection-end="8071" vertical-scroll-proportion="0.0">
+            <state line="185" column="0" selection-start="8101" selection-end="8101" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#9444#9457#0" expanded="true" />
+                <element signature="e#9474#9487#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,25 +140,27 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="31" selection-start="653" selection-end="653" vertical-scroll-proportion="-8.5">
+            <state line="10" column="8" selection-start="656" selection-end="656" vertical-scroll-proportion="-8.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="NexmoClientTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/ms/client/NexmoClientTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/msnew/client/NexmoClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="171" selection-end="218" vertical-scroll-proportion="0.1722973">
-              <folding />
+            <state line="121" column="0" selection-start="4161" selection-end="4161" vertical-scroll-proportion="0.4730195">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="NexmoAuthenticationUtil.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/util/NexmoAuthenticationUtil.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/util/NexmoAuthenticationUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="14" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
+            <state line="20" column="14" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,18 +176,18 @@
         </entry>
       </file>
       <file leaf-file-name="MsClientFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/client/MsClientFactory.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/client/MsClientFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="77" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0">
+            <state line="24" column="77" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="SMSMessageResponse.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessageResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0">
+            <state line="13" column="13" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,9 +196,9 @@
         </entry>
       </file>
       <file leaf-file-name="SMSMessageEntityResponse.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageEntityResponse.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessageEntityResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="13" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
+            <state line="15" column="13" selection-start="397" selection-end="397" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -180,7 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ms/beans/twilio/SMSResponseTw.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/restclient/SpringRestClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/client/TwilioClient.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/ms/client/TwilioClientTest.java" />
@@ -193,9 +232,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/app-config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/AccountNumber.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/ms/client/NexmoClientTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ms/client/NexmoClient.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-config.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/ms/client/NexmoClientTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/msnew/client/NexmoClientTest.java" />
       </list>
     </option>
   </component>
@@ -341,7 +381,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ms" />
+              <option name="myItemId" value="msnew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -371,7 +411,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ms" />
+              <option name="myItemId" value="msnew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -401,7 +441,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ms" />
+              <option name="myItemId" value="msnew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -431,7 +471,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ms" />
+              <option name="myItemId" value="msnew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -461,7 +501,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ms" />
+              <option name="myItemId" value="msnew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -491,7 +531,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ms" />
+              <option name="myItemId" value="msnew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -525,7 +565,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ms" />
+              <option name="myItemId" value="msnew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -590,51 +630,19 @@
       <recent name="com.ms.restclient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NexmoClientTest.testSearchMessage">
-    <configuration default="false" name="NexmoClientTest.testGetAccountNumbers" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.ms.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="MultiServicesClientNew" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.ms.client" />
-      <option name="MAIN_CLASS_NAME" value="com.ms.client.NexmoClientTest" />
-      <option name="METHOD_NAME" value="testGetAccountNumbers" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.NexmoClientTest.testSendSMSMessage">
     <configuration default="false" name="NexmoClientTest.testUpdateAccountSecret" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.ms.client.*" />
+          <option name="PATTERN" value="com.msnew.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="MultiServicesClientNew" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.ms.client" />
-      <option name="MAIN_CLASS_NAME" value="com.ms.client.NexmoClientTest" />
+      <option name="PACKAGE_NAME" value="com.msnew.client" />
+      <option name="MAIN_CLASS_NAME" value="com.msnew.client.NexmoClientTest" />
       <option name="METHOD_NAME" value="testUpdateAccountSecret" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -660,15 +668,15 @@
     <configuration default="false" name="NexmoClientTest.testNumberSearch" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.ms.client.*" />
+          <option name="PATTERN" value="com.msnew.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="MultiServicesClientNew" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.ms.client" />
-      <option name="MAIN_CLASS_NAME" value="com.ms.client.NexmoClientTest" />
+      <option name="PACKAGE_NAME" value="com.msnew.client" />
+      <option name="MAIN_CLASS_NAME" value="com.msnew.client.NexmoClientTest" />
       <option name="METHOD_NAME" value="testNumberSearch" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -692,15 +700,15 @@
     <configuration default="false" name="NexmoClientTest.testNumberSearchWithPattern" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.ms.client.*" />
+          <option name="PATTERN" value="com.msnew.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="MultiServicesClientNew" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.ms.client" />
-      <option name="MAIN_CLASS_NAME" value="com.ms.client.NexmoClientTest" />
+      <option name="PACKAGE_NAME" value="com.msnew.client" />
+      <option name="MAIN_CLASS_NAME" value="com.msnew.client.NexmoClientTest" />
       <option name="METHOD_NAME" value="testNumberSearchWithPattern" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -724,15 +732,15 @@
     <configuration default="false" name="NexmoClientTest.testSearchMessage" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.ms.client.*" />
+          <option name="PATTERN" value="com.msnew.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="MultiServicesClientNew" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.ms.client" />
-      <option name="MAIN_CLASS_NAME" value="com.ms.client.NexmoClientTest" />
+      <option name="PACKAGE_NAME" value="com.msnew.client" />
+      <option name="MAIN_CLASS_NAME" value="com.msnew.client.NexmoClientTest" />
       <option name="METHOD_NAME" value="testSearchMessage" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -752,6 +760,34 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="NexmoClientTest.testSendSMSMessage" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.msnew.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="MultiServicesClientNew" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.msnew.client" />
+      <option name="MAIN_CLASS_NAME" value="com.msnew.client.NexmoClientTest" />
+      <option name="METHOD_NAME" value="testSendSMSMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -845,11 +881,11 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Application.HelloApp" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.AppTests" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.NexmoClientTest.testGetAccountNumbers" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NexmoClientTest.testUpdateAccountSecret" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.NexmoClientTest.testNumberSearch" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.NexmoClientTest.testNumberSearchWithPattern" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.NexmoClientTest.testSearchMessage" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.NexmoClientTest.testUpdateAccountSecret" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.NexmoClientTest.testNumberSearch" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NexmoClientTest.testNumberSearchWithPattern" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.NexmoClientTest.testSearchMessage" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.NexmoClientTest.testSendSMSMessage" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -898,7 +934,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -918,7 +954,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19497864" sideWeight="0.6707589" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18002136" sideWeight="0.6886161" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31138393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31138393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1024,49 +1060,49 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/exception/MsException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/exception/MsException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="21" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/restclient/RestClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/restclient/RestClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="10" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/restclient/SpringRestClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/restclient/SpringRestClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="17" selection-start="2637" selection-end="2637" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="13" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageEntityResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessageEntityResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
+        <state line="15" column="13" selection-start="397" selection-end="397" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSResponseNx.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSResponseNx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="55" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/AccountSettings.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountSettings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0">
           <folding>
@@ -1075,21 +1111,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/client/MsClientFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/client/MsClientFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="77" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0">
+        <state line="24" column="77" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/util/NexmoAuthenticationUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/util/NexmoAuthenticationUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="14" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
+        <state line="20" column="14" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/AccountNumber.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/AccountNumber.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="0" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0">
           <folding>
@@ -1105,9 +1141,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/beans/nexmo/SMSMessageResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/beans/nexmo/SMSMessageResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0">
+        <state line="13" column="13" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1121,11 +1157,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ms/client/NexmoClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msnew/client/NexmoClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="19" selection-start="8071" selection-end="8071" vertical-scroll-proportion="0.0">
+        <state line="185" column="0" selection-start="8101" selection-end="8101" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#9444#9457#0" expanded="true" />
+            <element signature="e#9474#9487#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1135,15 +1171,17 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="31" selection-start="653" selection-end="653" vertical-scroll-proportion="-8.5">
+        <state line="10" column="8" selection-start="656" selection-end="656" vertical-scroll-proportion="-8.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/ms/client/NexmoClientTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/msnew/client/NexmoClientTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="171" selection-end="218" vertical-scroll-proportion="0.1722973">
-          <folding />
+        <state line="121" column="0" selection-start="4161" selection-end="4161" vertical-scroll-proportion="0.4730195">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
